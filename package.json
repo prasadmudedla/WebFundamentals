@@ -60,7 +60,8 @@
     "semver": "^5.4.1",
     "unist-util-generated": "^1.1.0",
     "unist-util-visit": "^1.1.1",
-    "vfile": "^2.0.1"
+    "vfile": "^2.0.1",
+    "snyk": "^1.316.1"
   },
   "scripts": {
     "build": "gulp build",
@@ -70,6 +71,9 @@
     "precommit": "gulp update-updated_on",
     "prepush": "npm test",
     "prestart": "gulp build",
-    "postinstall": "tools/update-resources.sh && gulp post-install"
-  }
+    "postinstall": "tools/update-resources.sh && gulp post-install",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
+  },
+  "snyk": true
 }
